@@ -1,0 +1,99 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCRM.Core", "OpenDHS.Shared\OpenCRM.Core.csproj", "{EB58C440-D27E-4E91-9238-D09905F5E5E6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Web", "OpenDHS.Web\OpenDHS.Web.csproj", "{2338CE73-379A-448B-9FF6-EFA3CA759FFC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCRM.Core.Test", "OpenDHS.Shared.Test\OpenCRM.Core.Test.csproj", "{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenCRM.Finance", "OpenDHS.Finance\OpenCRM.Finance.csproj", "{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sites", "Sites", "{B2EB63A0-92AC-4CFE-97EE-122F0896EC45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.StudioMaggio.Site", "Sites\OpenDHS.StudioMaggio.Site\OpenDHS.StudioMaggio.Site.csproj", "{4759D7E3-C5D7-4533-92C5-60A40EAF7612}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenDHS.Omniumbio.Site", "Sites\OpenDHS.Omniumbio.Site\OpenDHS.Omniumbio.Site.csproj", "{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{C542CA25-BF9C-4AA8-A4EE-5217621EB63B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AC0CF4BF-CF7F-489E-A05F-1E884730C909}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCRM.Manage", "OpenCRM.Manage\OpenCRM.Manage.csproj", "{A56E932D-B833-4E74-8C6A-E51E279F22CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCRM.SwissLPD", "OpenCRM.SwissLPD\OpenCRM.SwissLPD.csproj", "{22F0B4DF-9FF8-4EF9-B7E3-9247966542BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenCRM.Web", "OpenCRM.Web\OpenCRM.Web.csproj", "{0D8FD3D3-6634-4B99-B187-D0A0CD3F330C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E2A8B1A-A5EF-427A-A39B-7E125B5FF6EA}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{008BD92C-0E44-429B-A409-9CC017E35058}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\OpenCRM.Manage.md = Docs\OpenCRM.Manage.md
+		Docs\OpenCRM.md = Docs\OpenCRM.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB58C440-D27E-4E91-9238-D09905F5E5E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2338CE73-379A-448B-9FF6-EFA3CA759FFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A56E932D-B833-4E74-8C6A-E51E279F22CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A56E932D-B833-4E74-8C6A-E51E279F22CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A56E932D-B833-4E74-8C6A-E51E279F22CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A56E932D-B833-4E74-8C6A-E51E279F22CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22F0B4DF-9FF8-4EF9-B7E3-9247966542BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F0B4DF-9FF8-4EF9-B7E3-9247966542BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F0B4DF-9FF8-4EF9-B7E3-9247966542BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F0B4DF-9FF8-4EF9-B7E3-9247966542BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D8FD3D3-6634-4B99-B187-D0A0CD3F330C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D8FD3D3-6634-4B99-B187-D0A0CD3F330C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D8FD3D3-6634-4B99-B187-D0A0CD3F330C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D8FD3D3-6634-4B99-B187-D0A0CD3F330C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EB58C440-D27E-4E91-9238-D09905F5E5E6} = {AC0CF4BF-CF7F-489E-A05F-1E884730C909}
+		{ADF5A8B7-B2C0-436D-9491-CC3B843380F4} = {AC0CF4BF-CF7F-489E-A05F-1E884730C909}
+		{DADA415F-7BCB-4220-AFCA-8AAEB351D99E} = {C542CA25-BF9C-4AA8-A4EE-5217621EB63B}
+		{4759D7E3-C5D7-4533-92C5-60A40EAF7612} = {B2EB63A0-92AC-4CFE-97EE-122F0896EC45}
+		{95E9E0FF-805D-4CA0-9EEE-A411B578DAFC} = {B2EB63A0-92AC-4CFE-97EE-122F0896EC45}
+		{A56E932D-B833-4E74-8C6A-E51E279F22CC} = {C542CA25-BF9C-4AA8-A4EE-5217621EB63B}
+		{22F0B4DF-9FF8-4EF9-B7E3-9247966542BC} = {C542CA25-BF9C-4AA8-A4EE-5217621EB63B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3CE3E16D-DB9A-4580-9FD7-D9BFC2CDD0C6}
+	EndGlobalSection
+EndGlobal
