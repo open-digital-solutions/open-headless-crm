@@ -8,6 +8,12 @@ namespace OpenCRM.Core.DataBlock
 {
     public interface IDataBlockService
     {
-
+        Task<DataBlockModel<TDataModel>?> GetDataBlockAsync<TDataModel>(Guid id);
+        /// <summary>
+        /// TODO: Async
+        /// </summary>
+        /// <typeparam name="TDataModel"></typeparam>
+        /// <returns></returns>
+        List<DataBlockModel<TDataModel>> GetDataBlockListAsync<TDataModel>();
     }
 }
