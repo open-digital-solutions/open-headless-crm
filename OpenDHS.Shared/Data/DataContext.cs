@@ -63,7 +63,6 @@ namespace OpenDHS.Shared
             builder.Entity<HistoryEntity>().ToTable("History");
             builder.Entity<DataBlockEntity>().ToTable("DataBlocks");
             builder.Entity<DataContainerEntity>().ToTable("DataContainers");
-            builder.Entity<PageContainerEntity>().ToTable("Pages");
             builder.Entity<LanguageEntity>().ToTable("Languages");
             builder.Entity<TranslationEntity>((entity) =>
             {
@@ -76,7 +75,6 @@ namespace OpenDHS.Shared
         public DbSet<HistoryEntity> History { get; set; }
         public DbSet<DataBlockEntity> DataBlocks { get; set; }
         public DbSet<DataContainerEntity> DataContainers { get; set; }
-        public DbSet<PageContainerEntity> Pages { get; set; }
 
     }
 
