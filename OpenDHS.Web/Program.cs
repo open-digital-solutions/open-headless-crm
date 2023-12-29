@@ -4,7 +4,7 @@ using OpenDHS.Shared.Data;
 using OpenDHS.Web.Data;
 using OpenDHS.Web.Middlewares;
 using OpenCRM.Finance;
-using OpenCRM.Manage;
+using OpenCRM.SwissLPD;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DBConnection") ?? throw new InvalidOperationException("Connection string 'DBConnection' not found.");
@@ -22,9 +22,11 @@ builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerMiddleware();
 
+/// Registering OpenCRM Modules
 builder.Services.AddOpenDHSServices<OpenDHSDataContext>();
 builder.Services.AddOpenCRMFinance<OpenDHSDataContext>();
-builder.Services.AddOpenCRMManage<OpenDHSDataContext>();
+// builder.Services.AddOpenCRMManage<OpenDHSDataContext>();
+builder.Services.AddOpenCRMSwissLPD<OpenDHSDataContext>();
 
 
 
@@ -35,9 +37,11 @@ app.UseStaticFiles();
 app.UseAuthMiddleware();
 app.UseSwaggerMiddleware();
 
+/// Using OpenCRM Modules
 app.UseOpenDHSServices<OpenDHSDataContext>();
 app.UseOpenCRMFinance<OpenDHSDataContext>();
-app.UseOpenCRMManage<OpenDHSDataContext>();
+// app.UseOpenCRMManage<OpenDHSDataContext>();
+app.UseOpenCRMSwissLPD<OpenDHSDataContext>();
 
 
 app.MapControllers();
