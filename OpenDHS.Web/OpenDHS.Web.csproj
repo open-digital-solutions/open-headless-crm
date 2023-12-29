@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OpenCRM.Manage\OpenCRM.Manage.csproj" />
     <ProjectReference Include="..\OpenDHS.Finance\OpenCRM.Finance.csproj" />
     <ProjectReference Include="..\OpenDHS.Shared\OpenCRM.Core.csproj" />
   </ItemGroup>

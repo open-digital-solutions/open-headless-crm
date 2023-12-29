@@ -4,6 +4,7 @@ using OpenDHS.Shared.Data;
 using OpenDHS.Web.Data;
 using OpenDHS.Web.Middlewares;
 using OpenCRM.Finance;
+using OpenCRM.Manage;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DBConnection") ?? throw new InvalidOperationException("Connection string 'DBConnection' not found.");
@@ -20,8 +21,10 @@ builder.Services.AddRazorPages();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerMiddleware();
+
 builder.Services.AddOpenDHSServices<OpenDHSDataContext>();
 builder.Services.AddOpenCRMFinance<OpenDHSDataContext>();
+builder.Services.AddOpenCRMManage<OpenDHSDataContext>();
 
 
 
@@ -31,8 +34,12 @@ app.UseCorsMiddleware();
 app.UseStaticFiles();
 app.UseAuthMiddleware();
 app.UseSwaggerMiddleware();
+
 app.UseOpenDHSServices<OpenDHSDataContext>();
 app.UseOpenCRMFinance<OpenDHSDataContext>();
+app.UseOpenCRMManage<OpenDHSDataContext>();
+
+
 app.MapControllers();
 app.MapRazorPages();
 
