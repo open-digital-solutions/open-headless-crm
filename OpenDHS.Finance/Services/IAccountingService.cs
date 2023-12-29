@@ -6,6 +6,6 @@ namespace OpenCRM.Finance.Services
     public interface IAccountingService
     {
         List<DataBlockModel<AccountingModel>> GetAccountingModels();
-        void Seed();
+        Task SeedAsync();
     }
 }

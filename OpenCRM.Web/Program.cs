@@ -42,7 +42,7 @@ app.UseAuthorization();
 
 /// Using OpenCRM Modules
 app.UseOpenDHSServices<OpenCRMDataContext>();
-app.UseOpenCRMFinance<OpenCRMDataContext>();
+app.UseOpenCRMFinanceAsync<OpenCRMDataContext>();
 // app.UseOpenCRMManage<OpenDHSDataContext>();
 app.UseOpenCRMSwissLPD<OpenCRMDataContext>();
 

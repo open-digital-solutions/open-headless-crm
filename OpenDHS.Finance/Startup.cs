@@ -22,7 +22,7 @@ namespace OpenCRM.Finance
 
             return services;
         }
-        public static IApplicationBuilder UseOpenCRMFinance<TDBContext>(this IApplicationBuilder app) where TDBContext : DataContext
+        public static async Task<IApplicationBuilder> UseOpenCRMFinanceAsync<TDBContext>(this IApplicationBuilder app) where TDBContext : DataContext
         {
             if (app == null)
             {
@@ -33,7 +33,8 @@ namespace OpenCRM.Finance
                 //TODO: Use scoped app to use any regitered service before starting up
                 var accountingDataService = scope.ServiceProvider
                 .GetRequiredService<IAccountingService>();
-                accountingDataService.Seed();
+               
+                await accountingDataService.SeedAsync();
             }
             return app;
         }

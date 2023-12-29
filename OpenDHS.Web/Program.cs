@@ -39,7 +39,7 @@ app.UseSwaggerMiddleware();
 
 /// Using OpenCRM Modules
 app.UseOpenDHSServices<OpenDHSDataContext>();
-app.UseOpenCRMFinance<OpenDHSDataContext>();
+app.UseOpenCRMFinanceAsync<OpenDHSDataContext>();
 // app.UseOpenCRMManage<OpenDHSDataContext>();
 app.UseOpenCRMSwissLPD<OpenDHSDataContext>();
 

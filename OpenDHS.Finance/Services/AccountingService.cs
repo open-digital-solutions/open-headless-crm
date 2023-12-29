@@ -5,44 +5,39 @@ using System.Text.Json;
 
 namespace OpenCRM.Finance.Services
 {
-
     public class AccountingService<TDBContext> : IAccountingService where TDBContext : DataContext
     {
-        public TDBContext _dbContext { get; set; }
         public readonly IDataBlockService _dataBlockService;
-        public AccountingService(TDBContext dBContext, IDataBlockService dataBlockService)
+        public AccountingService( IDataBlockService dataBlockService)
         {
-            _dbContext = dBContext;
             _dataBlockService = dataBlockService;
         }
 
         public List<DataBlockModel<AccountingModel>> GetAccountingModels()
         {
             var blocksResult = _dataBlockService.GetDataBlockListAsync<AccountingModel>();
-
             return blocksResult;
         }
 
-        public void Seed()
+        public async Task SeedAsync()
         {
             var dataModel = new AccountingModel()
             {
-                AccountingType = AccountingType.DEBIT,
-                Ammount = 0,
-                Description = "Seeded debit description"
+                AccountingType = AccountingType.CREDIT,
+                Ammount = 333.544M,
+                Description = $"Seeded at {DateTime.UtcNow}"
             };
 
-            DataBlockEntity dataBlock = new()
+            DataBlockModel<AccountingModel> dataBlockModel = new()
             {
-                Name = "Seeded Accounting Data Block Name",
-                Description = "Seeded Accounting Data Block Description",
+                Name = dataModel.Description,
+                Description = dataModel.Description,
                 Type = typeof(AccountingModel).Name,
-                Data = JsonSerializer.Serialize(dataModel)
+                Data = dataModel
             };
 
-            _dbContext.Add(dataBlock);
-            _dbContext.SaveChanges();
+           var result =  await _dataBlockService.AddBlock(dataBlockModel);
+            Console.WriteLine(result);
         }
-
     }
 }

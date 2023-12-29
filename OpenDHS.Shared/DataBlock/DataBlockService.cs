@@ -1,4 +1,5 @@
 ﻿using OpenDHS.Shared;
+using OpenDHS.Shared.Data;
 using System.Text.Json;
 
 namespace OpenCRM.Core.DataBlock
@@ -66,11 +67,31 @@ namespace OpenCRM.Core.DataBlock
         }
 
 
-        //TODO: Implement ADD
         
-        
-        //TODO: Implement Delete
+        public async Task<DataBlockModel<TDataModel>?> AddBlock<TDataModel>(DataBlockModel<TDataModel> model) {
+            try {
+                //TODO: Handle errors and exceptions
+                var entity = Activator.CreateInstance<DataBlockEntity>();
+                entity.Name = model.Name;
+                entity.Description = model.Description;
+                entity.Type = typeof(TDataModel).Name;
+                entity.Data = JsonSerializer.Serialize(model.Data);
+                _dbContext.DataBlocks.Add(entity);
+                await _dbContext.SaveChangesAsync();
+                return entity.ToDataModel<TDataModel>();
+            } catch (Exception e) {
+                Console.WriteLine(e.Message);
+                return null;
+            } 
+        }
 
+        public async Task DeleteBlock<TDataModel>(Guid Id) {
+            //TODO: Handle errors and exceptions
+            var entity = await _dbContext.DataBlocks.FindAsync(Id);
+            if (entity == null) return;
+            _dbContext.Remove(entity);
+            await _dbContext.SaveChangesAsync();
+        }
 
     }
 }

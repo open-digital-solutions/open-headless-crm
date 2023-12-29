@@ -36,6 +36,6 @@ namespace OpenCRM.Core.DataBlock
                 DeletedAt = entity.DeletedAt,
             };
         }
-        
+
     }
 }
