@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using OpenDHS.Shared.Data;
 using OpenDHS.Shared.Extensions;
 using OpenDHS.Shared.QRCode;
+using OpenCRM.Core.DataBlock;
 
 namespace OpenDHS.Shared
 {
@@ -16,6 +17,7 @@ namespace OpenDHS.Shared
     
             services.AddScoped<QRCodeService>();
             services.AddScoped<IMediaService, MediaService<TDBContext>>();
+            services.AddScoped<IDataBlockService, DataBlockService<TDBContext>>();
 
             return services;
         }
