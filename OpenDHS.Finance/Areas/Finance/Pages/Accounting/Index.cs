@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OpenCRM.Core.DataBlock;
 using OpenCRM.Finance.Services;
 using OpenDHS.Shared;
 
@@ -14,7 +15,7 @@ namespace OpenCRM.Finance.Areas.Finance.Pages.Accounting
         }
 
         [BindProperty]
-        public List<AccountingModel> AccountingList { get; set; } = new List<AccountingModel>();
+        public List<DataBlockModel<AccountingModel>> AccountingList { get; set; } = new List<DataBlockModel<AccountingModel>>();
 
         public void OnGet()
         {

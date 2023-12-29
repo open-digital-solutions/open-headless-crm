@@ -1,10 +1,11 @@
-﻿using OpenDHS.Shared;
+﻿using OpenCRM.Core.DataBlock;
+using OpenDHS.Shared;
 
 namespace OpenCRM.Finance.Services
 {
     public interface IAccountingService
     {
-        List<AccountingModel> GetAccountingModels();
+        List<DataBlockModel<AccountingModel>> GetAccountingModels();
         void Seed();
     }
 }

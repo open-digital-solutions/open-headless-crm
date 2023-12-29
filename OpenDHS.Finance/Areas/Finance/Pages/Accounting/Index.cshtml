@@ -23,13 +23,13 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.AccountingType)
+                    @Html.DisplayFor(modelItem => item.ID)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Ammount)
+                    @Html.DisplayFor(modelItem => item.Data.Ammount)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Description)
+                    @Html.DisplayFor(modelItem => item.Data.Description)
                 </td>
                 @* <td>
                     <a asp-page="./Edit" asp-route-id="@item">Edit</a> |

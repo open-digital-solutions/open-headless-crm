@@ -1,4 +1,5 @@
-﻿using OpenDHS.Shared;
+﻿using OpenCRM.Core.DataBlock;
+using OpenDHS.Shared;
 using OpenDHS.Shared.Data;
 using System.Text.Json;
 
@@ -8,26 +9,32 @@ namespace OpenCRM.Finance.Services
     public class AccountingService<TDBContext> : IAccountingService where TDBContext : DataContext
     {
         public TDBContext _dbContext { get; set; }
-        public AccountingService(TDBContext dBContext)
+        public readonly IDataBlockService _dataBlockService;
+        public AccountingService(TDBContext dBContext, IDataBlockService dataBlockService)
         {
             _dbContext = dBContext;
+            _dataBlockService = dataBlockService;
         }
 
-        public List<AccountingModel> GetAccountingModels()
+        public List<DataBlockModel<AccountingModel>> GetAccountingModels()
         {
-            var result = new List<AccountingModel>();
-            var queryResult =  _dbContext.DataBlocks.Where((block) => block.Type == typeof(AccountingModel).Name).ToList();
+            var blocksResult = _dataBlockService.GetDataBlockListAsync<AccountingModel>();
 
-            if (queryResult == null || queryResult.Count == 0) return result;
+            return blocksResult;
 
-            foreach (var block in queryResult)
-            {
-                var dataBlock = JsonSerializer.Deserialize<AccountingModel>(block.Data);
-                if (dataBlock == null) continue;
-                result.Add(dataBlock);
-            }
+            //var result = new List<AccountingModel>();
+            //var queryResult =  _dbContext.DataBlocks.Where((block) => block.Type == typeof(AccountingModel).Name).ToList();
 
-            return result;
+            //if (queryResult == null || queryResult.Count == 0) return result;
+
+            //foreach (var block in queryResult)
+            //{
+            //    var dataBlock = JsonSerializer.Deserialize<AccountingModel>(block.Data);
+            //    if (dataBlock == null) continue;
+            //    result.Add(dataBlock);
+            //}
+
+            //return result;
         }
 
         public void Seed()
