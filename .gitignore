@@ -6,4 +6,4 @@ bin
 *.db
 *.db-shm
 *.db-wal
-/OpenCRM.Web/OpenCRM.Web.csproj.user
+*.csproj.user
