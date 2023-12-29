@@ -9,7 +9,7 @@ using OpenCRM.Core.DataBlock;
 
 namespace OpenDHS.Shared
 {
-    public static class WebStartupExtensions
+    public static class StartupModuleExtensions
     {
         public static IServiceCollection AddOpenDHSServices<TDBContext>(this IServiceCollection services) where TDBContext : DataContext
         {
