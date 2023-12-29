@@ -21,20 +21,6 @@ namespace OpenCRM.Finance.Services
             var blocksResult = _dataBlockService.GetDataBlockListAsync<AccountingModel>();
 
             return blocksResult;
-
-            //var result = new List<AccountingModel>();
-            //var queryResult =  _dbContext.DataBlocks.Where((block) => block.Type == typeof(AccountingModel).Name).ToList();
-
-            //if (queryResult == null || queryResult.Count == 0) return result;
-
-            //foreach (var block in queryResult)
-            //{
-            //    var dataBlock = JsonSerializer.Deserialize<AccountingModel>(block.Data);
-            //    if (dataBlock == null) continue;
-            //    result.Add(dataBlock);
-            //}
-
-            //return result;
         }
 
         public void Seed()
