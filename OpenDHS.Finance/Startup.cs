@@ -13,7 +13,7 @@ using OpenCRM.Finance.Services;
 namespace OpenCRM.Finance
 {
 
-    public static class StartUp
+    public static class StartupModuleExtensions
     {
         public static IServiceCollection AddOpenCRMFinance<TDBContext>(this IServiceCollection services) where TDBContext : DataContext
         {
