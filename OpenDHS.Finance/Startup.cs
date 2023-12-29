@@ -18,7 +18,7 @@ namespace OpenCRM.Finance
         public static IServiceCollection AddOpenCRMFinance<TDBContext>(this IServiceCollection services) where TDBContext : DataContext
         {
             //TODO: Register all module services here
-            services.AddScoped<AccountingDataService<TDBContext>>();
+            services.AddScoped<IAccountingService, AccountingService<TDBContext>>();
 
             return services;
         }
@@ -32,7 +32,7 @@ namespace OpenCRM.Finance
             {
                 //TODO: Use scoped app to use any regitered service before starting up
                 var accountingDataService = scope.ServiceProvider
-                .GetRequiredService<AccountingDataService<TDBContext>>();
+                .GetRequiredService<IAccountingService>();
                 accountingDataService.Seed();
             }
             return app;

@@ -1,0 +1,42 @@
+﻿@page
+@model OpenCRM.Finance.Areas.Finance.Pages.Accounting.IndexModel
+@{
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Ammount
+            </th>
+            <th>
+                Description
+            </th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AccountingList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountingType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ammount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                @* <td>
+                    <a asp-page="./Edit" asp-route-id="@item">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td> *@
+            </tr>
+        }
+    </tbody>
+</table>

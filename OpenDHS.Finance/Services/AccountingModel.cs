@@ -16,7 +16,7 @@ namespace OpenCRM.Finance.Services
         /// </summary>
         CREDIT = 1
     }
-    public class AccountingDataModel
+    public class AccountingModel
     {
         public required AccountingType AccountingType { get; set; }
         public required decimal Ammount { get; set; }
