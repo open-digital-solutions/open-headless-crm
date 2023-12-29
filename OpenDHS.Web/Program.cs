@@ -3,7 +3,7 @@ using OpenDHS.Shared;
 using OpenDHS.Shared.Data;
 using OpenDHS.Web.Data;
 using OpenDHS.Web.Middlewares;
-using Microsoft.AspNetCore.Identity;
+using OpenCRM.Finance;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DBConnection") ?? throw new InvalidOperationException("Connection string 'DBConnection' not found.");
@@ -21,6 +21,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSwaggerMiddleware();
 builder.Services.AddOpenDHSServices<OpenDHSDataContext>();
+builder.Services.AddOpenCRMFinance<OpenDHSDataContext>();
+
 
 
 var app = builder.Build();
@@ -30,6 +32,7 @@ app.UseStaticFiles();
 app.UseAuthMiddleware();
 app.UseSwaggerMiddleware();
 app.UseOpenDHSServices<OpenDHSDataContext>();
+app.UseOpenCRMFinance<OpenDHSDataContext>();
 app.MapControllers();
 app.MapRazorPages();
 
