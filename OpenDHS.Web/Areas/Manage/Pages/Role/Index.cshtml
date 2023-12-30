@@ -39,25 +39,25 @@
                         </thead>
                         <tbody>
                             @foreach (var item in Model.RoleEntity) {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Name)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.AddedAt)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.UpdatedAt)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.DeletedAt)
-                                        </td>
-                                        <td>
-                                            <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                                            <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                                            <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AddedAt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.UpdatedAt)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DeletedAt)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>

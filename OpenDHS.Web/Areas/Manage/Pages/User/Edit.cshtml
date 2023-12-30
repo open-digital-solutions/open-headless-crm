@@ -19,18 +19,13 @@
                                     <input type="hidden" asp-for="UserEntity.Id" />
                                     <div class="form-floating mb-3">
                                         <input asp-for="UserEntity.Name" class="form-control" />
-                                        <label asp-for="UserEntity.Name" class="control-label"></label>
+                                        <label asp-for="UserEntity.Name" class="control-label">First name</label>
                                         <span asp-validation-for="UserEntity.Name" class="text-danger"></span>
                                     </div>
                                     <div class="form-floating mb-3">
                                         <input asp-for="UserEntity.Lastname" class="form-control" />
-                                        <label asp-for="UserEntity.Lastname" class="control-label"></label>
+                                        <label asp-for="UserEntity.Lastname" class="control-label">Last name</label>
                                         <span asp-validation-for="UserEntity.Lastname" class="text-danger"></span>
-                                    </div>
-                                    <div class="form-floating mb-3">
-                                        <input asp-for="UserEntity.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" readonly/>
-                                        <label asp-for="UserEntity.Email" class="control-label"></label>
-                                        <span asp-validation-for="UserEntity.Email" class="text-danger"></span>
                                     </div>
                                     <div class="mt-4 mb-0">
                                         <div class="d-grid">
