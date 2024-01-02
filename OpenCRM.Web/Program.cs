@@ -44,7 +44,7 @@ app.UseAuthorization();
 app.UseOpenDHSServices<OpenCRMDataContext>();
 app.UseOpenCRMFinanceAsync<OpenCRMDataContext>();
 // app.UseOpenCRMManage<OpenDHSDataContext>();
-app.UseOpenCRMSwissLPD<OpenCRMDataContext>();
+app.UseOpenCRMSwissLPDAsync<OpenCRMDataContext>();
 
 app.MapRazorPages();
 

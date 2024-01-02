@@ -41,7 +41,7 @@ app.UseSwaggerMiddleware();
 app.UseOpenDHSServices<OpenDHSDataContext>();
 app.UseOpenCRMFinanceAsync<OpenDHSDataContext>();
 // app.UseOpenCRMManage<OpenDHSDataContext>();
-app.UseOpenCRMSwissLPD<OpenDHSDataContext>();
+app.UseOpenCRMSwissLPDAsync<OpenDHSDataContext>();
 
 
 app.MapControllers();
