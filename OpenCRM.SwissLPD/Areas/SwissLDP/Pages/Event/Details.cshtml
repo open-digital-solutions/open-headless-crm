@@ -1,0 +1,48 @@
+﻿@page
+@model OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event.DetailsModel
+@{
+	ViewData["Title"] = "Details";
+}
+
+<div id="layoutAuthentication">
+    <div id="layoutAuthentication_content">
+        <main>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-5">
+                        <div class="card shadow-lg border-0 rounded-lg mt-5">
+                            <div class="card-header"><h3 class="font-weight-light my-4 text-center">Details</h3></div>
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-4">
+                                        Description
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.Model.Data.Description)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        StartDate
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.Model.Data.StartDate)
+                                    </dd>
+                                    <dt class="col-sm-4">
+                                        EndDate
+                                    </dt>
+                                    <dd class="col-sm-8">
+                                        @Html.DisplayFor(model => model.Model.Data.EndDate)
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="card-footer text-center py-3 d-flex flex-column">
+                                <a asp-page="./Edit" asp-route-id="@Model.Model?.ID">Edit</a>
+                                <a asp-page="./Index">Back to List</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+

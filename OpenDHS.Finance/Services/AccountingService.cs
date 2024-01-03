@@ -37,7 +37,7 @@ namespace OpenCRM.Finance.Services
             };
 
            var result =  await _dataBlockService.AddBlock(dataBlockModel);
-            Console.WriteLine(result);
+           Console.WriteLine(result);
         }
     }
 }

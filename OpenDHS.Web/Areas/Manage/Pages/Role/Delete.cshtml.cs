@@ -20,7 +20,7 @@ namespace OpenDHS.Web.Areas.Manage.Pages.Role
         }
 
         [BindProperty]
-      public RoleEntity RoleEntity { get; set; } = default!;
+        public RoleEntity RoleEntity { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {

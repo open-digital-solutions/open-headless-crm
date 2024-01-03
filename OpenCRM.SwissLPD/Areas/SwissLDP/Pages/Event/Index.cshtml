@@ -1,6 +1,68 @@
 ﻿@page
 @model OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event.IndexModel
 @{
+    ViewData["Title"] = "Index";
 }
 
-<h1>Event List</h1>
+<div class="layoutSidenav_content">
+    <main>
+        <div class="container px-4 mt-4">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between">
+                    <div>
+                        <i class="fas fa-table me-1"></i>
+                        Events
+                    </div>
+                    <div>
+                        <a asp-page="Create">Create New</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Description
+                                </th>
+                                <th>
+                                    StartDate
+                                </th>
+                                <th>
+                                    EndDate
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.EventList)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Data.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Data.StartDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Data.EndDate)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                                        <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

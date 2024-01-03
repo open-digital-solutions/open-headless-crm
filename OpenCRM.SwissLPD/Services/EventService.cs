@@ -17,22 +17,25 @@ namespace OpenCRM.SwissLPD.Services
         }
         public DataBlockModel<EventModel> AddEvent(DataBlockModel<EventModel> model)
         {
-            throw new NotImplementedException();
+            var blockResult = _dataBlockService.AddBlock(model).Result;
+            return blockResult;
         }
 
         public DataBlockModel<EventModel> GetEvent(Guid Id)
         {
-            throw new NotImplementedException();
+            var blockResult = _dataBlockService.GetDataBlockAsync<EventModel>(Id).Result;
+            return blockResult;
         }
 
         public List<DataBlockModel<EventModel>> GetEvents()
         {
-            throw new NotImplementedException();
+            var blocksResult = _dataBlockService.GetDataBlockListAsync<EventModel>();
+            return blocksResult;
         }
 
-        public Task RemoveEvent(Guid Id)
+        public async Task RemoveEvent(Guid Id)
         {
-            throw new NotImplementedException();
+            await _dataBlockService.DeleteBlock<EventModel>(Id);
         }
 
         public Task Seed()

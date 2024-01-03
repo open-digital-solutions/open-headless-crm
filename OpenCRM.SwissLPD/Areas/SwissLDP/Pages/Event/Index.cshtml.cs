@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OpenCRM.Core.DataBlock;
 using OpenCRM.SwissLPD.Services;
 
 namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
@@ -7,14 +8,22 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
     public class IndexModel : PageModel
     {
         private readonly IEventService _eventService;
+
         public IndexModel(IEventService eventService)
         {
             _eventService = eventService;
         }
+
+        [BindProperty]
+        public List<DataBlockModel<EventModel>> EventList { get; set; } = new List<DataBlockModel<EventModel>>();
+
         public void OnGet()
         {
-            //TODO: Load here event list. Define page's list bind property
-            //await_eventService.GetEvents();
+            var data = _eventService.GetEvents();
+            if (data != null)
+            {
+                EventList = data;
+            }
         }
     }
 }
