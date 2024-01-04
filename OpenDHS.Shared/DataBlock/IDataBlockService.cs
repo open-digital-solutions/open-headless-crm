@@ -9,7 +9,7 @@ namespace OpenCRM.Core.DataBlock
     public interface IDataBlockService
     {
         /// <summary>
-        /// TODO
+        /// TODO:
         /// </summary>
         /// <typeparam name="TDataModel"></typeparam>
         /// <param name="id"></param>
@@ -29,11 +29,18 @@ namespace OpenCRM.Core.DataBlock
         /// <returns></returns>
         Task<DataBlockModel<TDataModel>?> AddBlock<TDataModel>(DataBlockModel<TDataModel> model);
         /// <summary>
-        /// 
+        /// TODO: 
         /// </summary>
         /// <typeparam name="TDataModel"></typeparam>
         /// <param name="Id"></param>
         /// <returns></returns>
         Task DeleteBlock<TDataModel>(Guid Id);
+        /// <summary>
+        /// TODO: 
+        /// </summary>
+        /// <typeparam name="TDataModel"></typeparam>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        Task<DataBlockModel<TDataModel>?> EditBlock<TDataModel>(DataBlockModel<TDataModel> model);
     }
 }

@@ -10,7 +10,6 @@ namespace OpenCRM.Core.DataBlock
         public DataBlockService(TDBContext dBContext) { 
             _dbContext = dBContext;
         }
-
         public async Task<DataBlockModel<TDataModel>?> GetDataBlockAsync<TDataModel>(Guid id) { 
            
             try {
@@ -28,7 +27,6 @@ namespace OpenCRM.Core.DataBlock
                 return null;
             }
         }
-
         public List<DataBlockModel<TDataModel>> GetDataBlockListAsync<TDataModel>()
         {
             List<DataBlockModel<TDataModel>> result = new();
@@ -65,9 +63,6 @@ namespace OpenCRM.Core.DataBlock
             }
             return result;
         }
-
-
-        
         public async Task<DataBlockModel<TDataModel>?> AddBlock<TDataModel>(DataBlockModel<TDataModel> model) {
             try {
                 //TODO: Handle errors and exceptions
@@ -84,7 +79,6 @@ namespace OpenCRM.Core.DataBlock
                 return null;
             } 
         }
-
         public async Task DeleteBlock<TDataModel>(Guid Id) {
             //TODO: Handle errors and exceptions
             var entity = await _dbContext.DataBlocks.FindAsync(Id);
@@ -92,6 +86,26 @@ namespace OpenCRM.Core.DataBlock
             _dbContext.Remove(entity);
             await _dbContext.SaveChangesAsync();
         }
-
+        public async Task<DataBlockModel<TDataModel>?> EditBlock<TDataModel>(DataBlockModel<TDataModel> model) {
+            try
+            {
+                //TODO: Handle errors and exceptions
+                var entity = await _dbContext.DataBlocks.FindAsync(model.ID);
+                if (entity == null) return null;
+                if(entity.Type != typeof(TDataModel).Name) return null;
+                entity.Name = model.Name;
+                entity.Description = model.Description;
+                entity.Type = typeof(TDataModel).Name;
+                entity.Data = JsonSerializer.Serialize(model.Data);
+                _dbContext.DataBlocks.Update(entity);
+                await _dbContext.SaveChangesAsync();
+                return entity.ToDataModel<TDataModel>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
 }
