@@ -17,23 +17,45 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
         }
 
         [BindProperty]
-        public DataBlockModel<EventModel> Model { get; set; } = default!;
+        public EventModel Model { get; set; } = default!;
 
         public IActionResult OnGet(Guid id)
         {
-            var dataModel = _eventService.GetEvent(id);
+            var dataBlockModel = _eventService.GetEvent(id);
 
-            if (dataModel == null)
+            if (dataBlockModel == null)
             {
                 return NotFound();
             }
             
-            Model = dataModel;
+            Model = dataBlockModel.Data;
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(Guid id)
+        public IActionResult OnPost(Guid id)
         {
+            if(ModelState.IsValid)
+            {
+                var dataBlockModel = _eventService.GetEvent(id);
+
+                if (dataBlockModel == null)
+                {
+                    return NotFound();
+                }
+
+                var dataBlockModelEdit = new DataBlockModel<EventModel>()
+                {
+                    ID = id,
+                    Name = Model.Description,
+                    Description = Model.Description,
+                    Type = typeof(EventModel).Name,
+                    Data = Model
+                };
+
+                _eventService.EditEvent(dataBlockModelEdit);
+                 return RedirectToPage("./Index");
+            }
+
             return Page();
         }
     }

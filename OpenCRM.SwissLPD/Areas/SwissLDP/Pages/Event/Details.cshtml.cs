@@ -20,14 +20,14 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
 
         public IActionResult OnGet(Guid id)
         {
-            var dataModel = _eventService.GetEvent(id);
+            var dataBlockModel = _eventService.GetEvent(id);
             
-            if (dataModel == null)
+            if (dataBlockModel == null)
             {
                return NotFound();
             }
          
-            Model = dataModel;
+            Model = dataBlockModel;
             return Page();
         }
     }

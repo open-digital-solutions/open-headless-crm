@@ -21,6 +21,12 @@ namespace OpenCRM.SwissLPD.Services
             return blockResult;
         }
 
+        public DataBlockModel<EventModel> EditEvent(DataBlockModel<EventModel> model)
+        {
+            var blockResult = _dataBlockService.EditBlock(model).Result;
+            return blockResult;
+        }
+
         public DataBlockModel<EventModel> GetEvent(Guid Id)
         {
             var blockResult = _dataBlockService.GetDataBlockAsync<EventModel>(Id).Result;

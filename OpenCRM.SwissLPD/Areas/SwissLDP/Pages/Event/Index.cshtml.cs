@@ -19,10 +19,10 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
 
         public void OnGet()
         {
-            var data = _eventService.GetEvents();
-            if (data != null)
+            var events = _eventService.GetEvents();
+            if (events != null)
             {
-                EventList = data;
+                EventList = events;
             }
         }
     }

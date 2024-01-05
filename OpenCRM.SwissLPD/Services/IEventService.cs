@@ -12,6 +12,7 @@ namespace OpenCRM.SwissLPD.Services
         List<DataBlockModel<EventModel>> GetEvents();
         DataBlockModel<EventModel> GetEvent(Guid Id);
         DataBlockModel<EventModel> AddEvent(DataBlockModel<EventModel> model);
+        DataBlockModel<EventModel> EditEvent(DataBlockModel<EventModel> model);
         Task RemoveEvent(Guid Id);
         Task Seed();
     }

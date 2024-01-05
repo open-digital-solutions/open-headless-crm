@@ -28,7 +28,7 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
 		{
 			if (ModelState.IsValid)
 			{
-				var dataModel = new EventModel()
+				var eventModel = new EventModel()
 				{
 					Description = Model.Description,
 					StartDate = Model.StartDate,
@@ -37,10 +37,10 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
 
 				var dataBlockModel = new DataBlockModel<EventModel>()
 				{
-					Name = dataModel.Description,
-					Description = dataModel.Description,
+					Name = eventModel.Description,
+					Description = eventModel.Description,
 					Type = typeof(EventModel).Name,
-					Data = dataModel
+					Data = eventModel
 				};
 
 				_eventService.AddEvent(dataBlockModel);
