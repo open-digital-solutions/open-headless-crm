@@ -33,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OpenCRM.Core.Web\OpenCRM.Core.Web.csproj" />
     <ProjectReference Include="..\OpenCRM.Manage\OpenCRM.Manage.csproj" />
     <ProjectReference Include="..\OpenCRM.SwissLPD\OpenCRM.SwissLPD.csproj" />
     <ProjectReference Include="..\OpenDHS.Finance\OpenCRM.Finance.csproj" />
