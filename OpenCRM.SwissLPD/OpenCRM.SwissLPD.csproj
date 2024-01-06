@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OpenCRM.Core.UI\OpenCRM.Core.UI.csproj" />
+    <ProjectReference Include="..\OpenCRM.Core.Web\OpenCRM.Core.Web.csproj" />
     <ProjectReference Include="..\OpenDHS.Shared\OpenCRM.Core.csproj" />
   </ItemGroup>
 
