@@ -32,9 +32,8 @@ namespace OpenCRM.Finance
             {
                 //TODO: Use scoped app to use any regitered service before starting up
                 var accountingDataService = scope.ServiceProvider
-                .GetRequiredService<IAccountingService>();
-               
-                await accountingDataService.SeedAsync();
+                .GetRequiredService<IAccountingService>();               
+                await accountingDataService.Seed();
             }
             return app;
         }
