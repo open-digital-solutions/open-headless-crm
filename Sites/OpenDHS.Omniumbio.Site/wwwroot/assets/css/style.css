@@ -125,7 +125,7 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
-    background: #fff;
+    background: #d1dd6c;
 }
 
 #header.header-transparent {
@@ -188,7 +188,7 @@ h6 {
   font-size: 18px;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(231,34,6,255);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -224,7 +224,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #fff;
+  color: #e72206;
 }
 
 .navbar .dropdown ul {
@@ -430,7 +430,7 @@ h6 {
 #hero {
     width: 100%;
     background-color: rgb(209,220,115, 0);
-    background-image: url("../img/bio/omniobio-disegno.jpg");
+    background-image: url("../img/bio/omniobio-disegno.png");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -599,10 +599,11 @@ h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
+  background: #d1dd6c;
 }
 
 .section-bg {
-  background-color: #f5f5ff;
+    background-color: #d1dd6c;
 }
 
 .section-title {
@@ -1100,7 +1101,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: #fff;
+    background: #d1dd6c;
 }
 
 .team .member {

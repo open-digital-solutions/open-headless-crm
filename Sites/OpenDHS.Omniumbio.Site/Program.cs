@@ -19,6 +19,17 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+// Configuración para redirigir a '/Home' al iniciar la aplicación
+app.Use(async (context, next) =>
+{
+    if (!context.Request.Path.HasValue || context.Request.Path == "/")
+    {
+        context.Response.Redirect("/Index");
+    }
+
+    await next();
+});
+
 app.UseAuthorization();
 
 app.MapRazorPages();
