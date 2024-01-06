@@ -306,7 +306,7 @@ h6 {
     transition: 0.5s;
 }
 
-@media (max-width: 991px) {
+/*@media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
   }
@@ -314,7 +314,28 @@ h6 {
   .navbar ul {
     display: none;
   }
+}*/
+
+@media (min-width: 3080px) and (max-width: 50px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
 }
+
+
+/*@media (max-width: 991px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    .navbar ul {
+        display: none;
+    }
+}*/
 
 .navbar-mobile {
   position: fixed;
