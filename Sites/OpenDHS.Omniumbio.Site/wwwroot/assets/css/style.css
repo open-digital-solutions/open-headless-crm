@@ -437,12 +437,10 @@ h6 {
 # Hero Home Section
 --------------------------------------------------------------*/
 #herohome {
-    height: 1000px;
-    background-image: url("../img/bio/immagine-base.jpg");
     background-repeat: no-repeat;
-    background-color: cornflowerblue;
-    background-position: center;
-    padding: 10px;
+    background-color:  transparent;
+    background-position: initial;
+    overflow: hidden;
 }
 
 /*--------------------------------------------------------------
@@ -620,11 +618,11 @@ h6 {
 section {
   padding: 60px 0;
   overflow: hidden;
-  background: #d1dd6c;
+  background: #fff;
 }
 
 .section-bg {
-    background-color: #d1dd6c;
+    background-color: #fff;
 }
 
 .section-title {

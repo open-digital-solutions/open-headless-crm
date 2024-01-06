@@ -1,12 +1,20 @@
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace OpenDHS.Omniumbio.Site.Pages
+namespace WGOOmniumbio.Pages
 {
-    public class HomeModel : PageModel
+    public class IndexModel : PageModel
     {
+        private readonly ILogger<IndexModel> _logger;
+
+        public IndexModel(ILogger<IndexModel> logger)
+        {
+            _logger = logger;
+        }
+
         public void OnGet()
         {
+
         }
     }
 }
