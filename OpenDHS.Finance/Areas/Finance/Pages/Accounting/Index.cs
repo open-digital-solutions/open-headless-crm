@@ -19,7 +19,7 @@ namespace OpenCRM.Finance.Areas.Finance.Pages.Accounting
 
         public void OnGet()
         {
-            var data = _accountingDataService.GetAccountingModels();
+            var data = _accountingDataService.GetAccountings();
             if (data != null)
             {
                 AccountingList = data;
