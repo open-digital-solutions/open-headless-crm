@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OpenCRM.Core.Web.Models;
+using System.Xml.Linq;
 
 namespace OpenCRM.Core.Web.Pages
 {
@@ -8,16 +9,22 @@ namespace OpenCRM.Core.Web.Pages
     {
 
         [BindProperty]
-        public BreadCrumbLinkModel? SingleLink { get; set; } = new BreadCrumbLinkModel
+        public List<BreadCrumbLinkModel> Links { get; set; } = new List<BreadCrumbLinkModel>();
+
+        public _BreadCrumbPartialModel()
         {
-            Area = "",
-            IsActive = true,
-            Name = "Home",
-            Page = "/"
-        };
+            Links.Add(new BreadCrumbLinkModel
+            {
+                Area = "",
+                IsActive = true,
+                Name = "Home",
+                Page = "/"
+            });
+        }
+
         public void OnGet()
         {
-
+            
         }
     }
 }

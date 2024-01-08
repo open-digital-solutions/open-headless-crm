@@ -11,24 +11,17 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
     {
         private readonly IEventService _eventService;
 
+        [BindProperty]
+        public List<DataBlockModel<EventModel>> EventList { get; set; } = new List<DataBlockModel<EventModel>>();
+
+        [BindProperty]
+        public _BreadCrumbPartialModel BreadCrumbPartialModel { get; set; } = new _BreadCrumbPartialModel();
+
         public IndexModel(IEventService eventService)
         {
             _eventService = eventService;
         }
 
-        [BindProperty]
-        public List<DataBlockModel<EventModel>> EventList { get; set; } = new List<DataBlockModel<EventModel>>();
-
-        [BindProperty]
-        public _BreadCrumbPartialModel BreadCrumbModel { get; set; } = new _BreadCrumbPartialModel
-        {
-            SingleLink = new BreadCrumbLinkModel { 
-                Area = "",
-                IsActive = true,
-                Name = "Home",
-                Page = "/"
-            }
-        };
         public void OnGet()
         {
             var events = _eventService.GetEvents();
