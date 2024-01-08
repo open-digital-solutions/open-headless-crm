@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OpenCRM.Core.DataBlock;
+using OpenCRM.Core.Web.Models;
+using OpenCRM.Core.Web.Pages;
 using OpenCRM.SwissLPD.Services;
 
 namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
@@ -17,6 +19,16 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
         [BindProperty]
         public List<DataBlockModel<EventModel>> EventList { get; set; } = new List<DataBlockModel<EventModel>>();
 
+        [BindProperty]
+        public _BreadCrumbPartialModel BreadCrumbModel { get; set; } = new _BreadCrumbPartialModel
+        {
+            SingleLink = new BreadCrumbLinkModel { 
+                Area = "",
+                IsActive = true,
+                Name = "Home",
+                Page = "/"
+            }
+        };
         public void OnGet()
         {
             var events = _eventService.GetEvents();
