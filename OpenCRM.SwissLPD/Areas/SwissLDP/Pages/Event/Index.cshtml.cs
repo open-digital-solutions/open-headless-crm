@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OpenCRM.Core.DataBlock;
@@ -29,6 +31,16 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
             {
                 EventList = events;
             }
+
+            BreadCrumbLinkModel newLink = new BreadCrumbLinkModel()
+            {
+                Area = "",
+                IsActive = true,
+                Name = "Event",
+                Page = "/Event"
+            };
+
+            BreadCrumbPartialModel.Links.Add(newLink);
         }
     }
 }
