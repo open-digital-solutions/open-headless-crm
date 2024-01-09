@@ -4,9 +4,18 @@
     <ol class="breadcrumb">
         @foreach (var item in this.Model.Links)
         {
-            <li class="breadcrumb-item">
-                <a class="nav-link text-dark" asp-area="@item.Area" asp-page="@item.Page">@item.Name</a>
-            </li>
+            @if (item.IsActive)
+            {
+                <li class="breadcrumb-item active" aria-current="page">
+                    @item.Name
+                </li>
+            }
+            else
+            {
+                <li class="breadcrumb-item">
+                    <a class="nav-link text-dark" href="@item.Page">@item.Name</a>
+                </li>
+            }
         }
     </ol>
 </nav>
