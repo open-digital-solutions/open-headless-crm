@@ -125,7 +125,7 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
-    background: #d1dd6c;
+    background: #fff;
 }
 
 #header.header-transparent {
@@ -453,7 +453,7 @@ h6 {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    padding: 120px 0 0 0;
+    padding: 220px 0 0 0;
 }
 
 #hero:before {
@@ -622,7 +622,7 @@ section {
 }
 
 .section-bg {
-    background-color: #fff;
+    background-color: #f5f5ff;
 }
 
 .section-title {
@@ -967,9 +967,9 @@ section {
 }
 
 .details .content h3 {
-  font-weight: 600;
-  font-size: 26px;
-  color: #00a631;
+    font-weight: 600;
+    font-size: 26px;
+    color: #010483;
 }
 
 .details .content ul {
@@ -1120,7 +1120,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-    background: #d1dd6c;
+    background: #fff;
 }
 
 .team .member {
