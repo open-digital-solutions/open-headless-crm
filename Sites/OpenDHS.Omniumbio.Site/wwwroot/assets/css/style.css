@@ -437,10 +437,10 @@ h6 {
 # Hero Home Section
 --------------------------------------------------------------*/
 #herohome {
+    background-image: url('~/assets/img/bio/landing_omniumbio_clean.png');
+    background-position: center;
     background-repeat: no-repeat;
-    background-color:  transparent;
-    background-position: initial;
-    overflow: hidden;
+    background-size: cover;    
 }
 
 /*--------------------------------------------------------------
@@ -616,9 +616,9 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
-  overflow: hidden;
-  background: #fff;
+    /*padding: 60px 0;*/
+    overflow: hidden;
+    background: #fff;
 }
 
 .section-bg {
