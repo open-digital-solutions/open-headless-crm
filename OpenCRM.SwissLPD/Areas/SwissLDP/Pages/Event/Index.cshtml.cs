@@ -27,6 +27,16 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
         {
             _eventService = eventService;
 
+            BreadCrumbPartialModel.Links[0].IsActive = false;
+
+            BreadCrumbPartialModel.Links.Add(new BreadCrumbLinkModel()
+            {
+                Area = "",
+                IsActive = true,
+                Name = "Event",
+                Page = "Event"
+            });
+
             TablePartialModel.Headers.Add("ID");
             TablePartialModel.Headers.Add("Description");
             TablePartialModel.Headers.Add("StartDate");
@@ -38,17 +48,17 @@ namespace OpenCRM.SwissLPD.Areas.SwissLDP.Pages.Event
             var events = _eventService.GetEvents();
             if (events != null)
             {
-                //EventList = events;
-                foreach(var item in events)
-                {
-                    TablePartialModel.Lines.Add(new List<string>()
-                    {
-                        item.ID.ToString(),
-                        item.Data.Description,
-                        item.Data.StartDate.ToString(),
-                        item.Data.EndDate.ToString()
-                    });
-                }
+                EventList = events;
+                //foreach(var item in events)
+                //{
+                //    TablePartialModel.Lines.Add(new List<string>()
+                //    {
+                //        item.ID.ToString(),
+                //        item.Data.Description,
+                //        item.Data.StartDate.ToString(),
+                //        item.Data.EndDate.ToString()
+                //    });
+                //}
             }
         }
     }
